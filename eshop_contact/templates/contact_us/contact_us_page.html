@@ -1,0 +1,92 @@
+{% extends 'shared/_MainLayout.html' %}
+{% load static %}
+
+{% block content %}
+    <div id="contact-page" class="container">
+        <div class="bg">
+            <div class="row">
+                <div class="container">
+                    <div class="col-sm-12" style="overflow: hidden; margin-bottom: 40px">
+                        <h2 class="title text-center">تمـاس با مـا</h2>
+                        <div id="gmap" class="contact-map">
+                            {% comment %}<img src="{% static 'images/home/Map.jpg' %}" alt="Map">{% endcomment %}
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d788.3166806142615!2d45.964288237385354!3d37.78378858338241!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x401a6182553d14cd%3A0xf20b927eaac466a3!2z2YTZiNin2LLZhSDbjNiv2qnbjCDYs9i524zYr9uM!5e0!3m2!1sen!2s!4v1614698428094!5m2!1sen!2s"
+                                    width="1200" height="450" style="border:0;" allowfullscreen=""
+                                    loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="contact-form">
+                        <h2 class="title text-center">با ما در ارتباط باشیـد</h2>
+                        <div class="status alert alert-success" style="display: none"></div>
+                        <form id="main-contact-form" class="contact-form row" name="contact-form" method="post"
+                              action="">
+                            {% csrf_token %}
+                            <div class="form-group col-md-6">
+                                {{ contact_form.full_name }}
+                                {% for error in contact_form.full_name.error %}
+                                    <p class="text-danger">{{ error }}</p>
+                                {% endfor %}
+                            </div>
+                            <div class="form-group col-md-6">
+                                {{ contact_form.email }}
+                                {% for error in contact_form.email.error %}
+                                    <p class="text-danger">{{ error }}</p>
+                                {% endfor %}
+
+                            </div>
+                            <div class="form-group col-md-12">
+                                {{ contact_form.subject }}
+                                {% for error in contact_form.subject.error %}
+                                    <p class="text-danger">{{ error }}</p>
+                                {% endfor %}
+
+                            </div>
+                            <div class="form-group col-md-12">
+                                {{ contact_form.text }}
+                                {% for error in contact_form.text.error %}
+                                    <p class="text-danger">{{ error }}</p>
+                                {% endfor %}
+
+                            </div>
+                            <div class="form-group col-md-12">
+                                <input type="submit" name="submit" class="btn btn-primary pull-right" value="ارسـال">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="contact-info">
+                        <h2 class="title text-center">اطلاعات تماس</h2>
+                        <address>
+                            <p>{{ setting.title }}</p>
+                            <p>آدرس : {{ setting.address }}</p>
+                            <p>تلفن ثابت : {{ setting.phone }}</p>
+                            <p>فکس : {{ setting.fax }}</p>
+                            <p>موبایل : {{ setting.mobile }}</p>
+                            <p style="font-family: tahoma;">ایمیل : {{ setting.email }}</p>
+                        </address>
+                        <div class="social-networks">
+                            <h2 class="title text-center">شبکـه های اجتـماعی</h2>
+                            <span class="socials-share share">
+									<ul>
+
+										<a href="http://www.instagram.com">
+											<li>
+												<label>اینستاگرام</label>
+												<img src="{% static 'images/product-details/Instagram.png' %}">
+											</li>
+										</a>
+									</ul>
+								</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
