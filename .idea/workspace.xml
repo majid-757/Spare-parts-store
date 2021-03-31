@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e96e5416-a2a2-411c-a2dd-d75ed471006a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysqlclient-1.4.6-cp39-cp39-win_amd64.whl" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +163,7 @@
       <workItem from="1615304674698" duration="5737000" />
       <workItem from="1615314061869" duration="3943000" />
       <workItem from="1615404127981" duration="701000" />
-      <workItem from="1617192825910" duration="473000" />
+      <workItem from="1617192825910" duration="1516000" />
     </task>
     <servers />
   </component>
